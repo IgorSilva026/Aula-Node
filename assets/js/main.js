@@ -2,17 +2,19 @@ const a = document.querySelector("#formulario")
 
 a.addEventListener("submit", function(e){
     e.preventDefault();
-    const x = e.target.querySelector("#valorUm")
-    const y = e.target.querySelector("#valorDois")
+    const x = e.target.querySelector("#peso")
+    const y = e.target.querySelector("#altura")
 
-    const valorUm = Number(x.value)
-    const valorDois = Number(y.value)
+    const peso = Number(x.value)
+    const altura = Number(y.value)
 
-    const z = soma(valorUm,valorDois)
+    const z = imc(peso,altura)
 
-    alert(z)
+    const d = z.toFixed(2)
+
+    alert(d)
 })
 
-function soma (a,b){
-    return (a+b)
+function imc (a,b){
+    return (a/(b*b))
 }
