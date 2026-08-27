@@ -12,9 +12,29 @@ a.addEventListener("submit", function(e){
 
     const d = z.toFixed(2)
 
-    alert(d)
+    const classificacao = Parametros(z)
+
+    const result = (`Seu IMC é: ${d} Voce esta ${classificacao}`); 
+
+    alert(result)
 })
 
 function imc (a,b){
     return (a/(b*b))
+
+}
+
+function Parametros(imc){
+    let classificacao
+    
+    if (imc < 18.5) {
+        classificacao = "Abaixo do peso"
+    } else if (imc < 25) {
+        classificacao = "Peso ideal"
+    } else if (imc < 30) {
+        classificacao = "Sobrepeso"
+    } else {
+        classificacao = "Obesidade"
+    }
+    return classificacao
 }
